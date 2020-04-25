@@ -8,21 +8,25 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 import jsonp from 'jsonp'
 export default {
   data () {
     return {
-      age: 30
+      age: 30,
+      data: ''
     }
   },
   mounted () {
-    const url = 'https://www.easy-mock.com/mock/5b012c1fe6e1035843cd3aff/mockapi/table/list'
-    axios.get(url).then(() => {
+    // https://www.easy-mock.com/mock/5b012c1fe6e1035843cd3aff/mockapi/table/list
+    const url = '/activity/servicetime'
+    // axios.get(url).then(() => {
 
-    })
-    jsonp(url, () => {
-
+    // })
+    // eslint-disable-next-line handle-callback-err
+    jsonp(url, (err, res) => {
+      const result = res
+      this.data = result
     })
   }
 }
