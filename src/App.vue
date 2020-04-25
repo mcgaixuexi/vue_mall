@@ -7,7 +7,26 @@
     <router-view/>
   </div>
 </template>
+<script>
+import axios from 'axios'
+import jsonp from 'jsonp'
+export default {
+  data () {
+    return {
+      age: 30
+    }
+  },
+  mounted () {
+    const url = 'https://www.easy-mock.com/mock/5b012c1fe6e1035843cd3aff/mockapi/table/list'
+    axios.get(url).then(() => {
 
+    })
+    jsonp(url, () => {
+
+    })
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
