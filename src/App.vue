@@ -4,13 +4,23 @@
   </div>
 </template>
 <script>
-
+import storage from './storage'
 export default {
   data () {
     return {
     }
   },
+  created () {
+    console.log(process.env.NODE_ENV)
+    console.log(process.env.VUE_APP_URL)
+  },
   mounted () {
+    // storage.setItem('a', 1)
+    // storage.setItem('user', { a: 1 })
+    // storage.setItem('abc', { a: 1 }, 'user')
+    // storage.clear('a')
+    // storage.clear('a', 'user')
+    storage.clear('a', 'abc')
   }
 }
 </script>
